@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAML & JSON Casino Games Title Extractor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 20px;
+            white-space: pre-wrap;
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 100%;
+            max-height: 600px;
+            overflow-y: auto;
+            font-size: large;  /* Increase font size for better readability */
+        }
+        .compare-box {
+            margin-top: 30px;
+            padding: 15px;
+            border: 1px solid #007bff;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .compare-box a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Softswiss Casino Games Titles Extractor</h1>
+
+    <!-- Form for uploading YAML, JSON, or TXT file -->
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <label for="file">Upload file:</label><br>
+        <input type="file" id="file" name="file" accept=".yaml, .json, .txt" required>
+        <br><br>
+        <button type="submit">Upload File</button>
+    </form>
+
+    <br>
+
+    <!-- Form for extraction -->
+    <form action="/extract" method="post">
+        <label for="extraction_type">Select extraction type:</label><br>
+        <select id="extraction_type" name="extraction_type" required>
+            <option value="titles">Extract Titles from YAML</option>
+            <option value="game_titles">Extract Game Titles from JSON</option>
+            <option value="text_content">Extract Text from TXT</option>
+        </select>
+        <br><br>
+        <button type="submit">Extract</button>
+    </form>
+
+    <!-- Compare Missing Test Section -->
+    <div class="compare-box">
+        <p>Compare text:
+            <a href="https://text-compare.com/" target="_blank">Text Compare Tool</a>
+        </p>
+    </div>
+
+    <h1 align="middle">N.G</h1>
+</body>
+</html>
+
